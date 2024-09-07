@@ -15,7 +15,7 @@ class TodoCubit extends Cubit<List<Todo>> {
   final TodoRepo todoRepo;
 
   // Constructor initializes the cubit with an empty list
-  TodoCubit(super.initialState, this.todoRepo) {
+  TodoCubit(this.todoRepo) : super([]) {
     loadTodos();
   }
 
