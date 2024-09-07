@@ -23,7 +23,11 @@ class TodoView extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        content: TextField(controller: textController),
+        title: const Text('Add TODO'),
+        content: TextField(controller: textController,decoration: const InputDecoration(
+          hintText: 'Homework',
+          helperStyle: TextStyle(fontWeight: FontWeight.w100)
+        ),),
         actions: [
           // cancel button
           TextButton(
@@ -57,6 +61,7 @@ class TodoView extends StatelessWidget {
 
       ),
       // FAB
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         label: Text('Add TODO'),
         onPressed: () => _showAddTodoBox(context),
@@ -75,7 +80,7 @@ class TodoView extends StatelessWidget {
 
               // List Tile UI
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Card(
                   elevation: 0,
                   child: ListTile(

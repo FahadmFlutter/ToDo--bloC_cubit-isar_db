@@ -40,6 +40,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
       home: TodoPage(todoRepo: todoRepo,),
     );
   }
